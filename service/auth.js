@@ -1,9 +1,9 @@
 const jwt = require('jsonwebtoken');
-const key = require('./key');
+const {key} = require('./key');
 
-function setUser(id, user) {
+function setUser(user) {
   return jwt.sign({
-    _id : user.id,
+    _id : user._id,
     email:user.email,
   },key);
 }
